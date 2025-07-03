@@ -1,30 +1,37 @@
 import { motion } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
 import { useState } from 'react';
+
 import btLogoBuyuk from '../assets/bt_logo_buyuk.png';
 import btLogoKucuk from '../assets/bt_logo_kucuk.png';
 import btLogoBuyukBeyaz from '../assets/bt_logo_buyuk_beyaz.png';
 import btLogoKucukBeyaz from '../assets/bt_logo_kucuk_beyaz.png';
+
 import btStarbucksLogo from '../assets/bt_starbucks.jpeg';
 import btStarbucks1 from '../assets/bt_starbucks_1.jpeg';
 import btStarbucks2 from '../assets/bt_starbucks_2.jpeg';
+
 import btRamadaLogo from '../assets/bt_ramada.jpeg';
 import btRamada1 from '../assets/bt_ramada1.jpeg';
 import btRamada2 from '../assets/bt_ramada2.jpeg';
 import btRamada3 from '../assets/bt_ramada3.jpeg';
+
 import btSpaceLogo from '../assets/bt_space.jpeg';
 import btSpace1 from '../assets/bt_space1.jpeg';
 import btSpace2 from '../assets/bt_space2.jpeg';
+
 import btEvLogo from '../assets/bt_tadilat.jpeg';
 import btEv1 from '../assets/bt_tadilat1.jpeg';
 import btEv2 from '../assets/bt_tadilat2.jpeg';
 import btEv3 from '../assets/bt_tadilat3.jpeg';
-import btEv4 from '../assets/bt_tadilat4.jpeg'; 
+import btEv4 from '../assets/bt_tadilat4.jpeg';
+
 import btVillaLogo from '../assets/bt_villacephe.jpeg';
 import btVilla1 from '../assets/bt_villacephe1.jpeg';
 import btVilla2 from '../assets/bt_villacephe2.jpeg';
 import btVilla3 from '../assets/bt_villacephe3.jpeg';
 import btVilla4 from '../assets/bt_villacephe4.jpeg';
+
 import btDavutlarVillaLogo from '../assets/bt_davutlar.jpeg';
 import btDavutlarVilla1 from '../assets/bt_davutlar1.jpeg';
 import btDavutlarVilla2 from '../assets/bt_davutlar2.jpeg';
@@ -39,7 +46,7 @@ const demoProjects = [
   {
     title: 'Ramada Hotel & Suites Havuz İnşaatı Onarım ve Tadilat',
     cover: btRamadaLogo,
-    images: [btRamadaLogo,btRamada1, btRamada2, btRamada3],
+    images: [btRamadaLogo, btRamada1, btRamada2, btRamada3],
   },
   {
     title: 'Space Garden Villaları',
@@ -61,8 +68,6 @@ const demoProjects = [
     cover: btDavutlarVillaLogo,
     images: [btDavutlarVillaLogo, btDavutlarVilla1, btDavutlarVilla2, btDavutlarVilla3],
   },
-
-
 ];
 
 export default function Projects() {
@@ -73,14 +78,20 @@ export default function Projects() {
     setExpandedIdx(idx);
     setGalleryIndex(0);
   };
+
   const closeCard = () => setExpandedIdx(null);
-  const nextImg = () => setGalleryIndex((i) => (i + 1) % demoProjects[expandedIdx].images.length);
-  const prevImg = () => setGalleryIndex((i) => (i - 1 + demoProjects[expandedIdx].images.length) % demoProjects[expandedIdx].images.length);
+
+  const nextImg = () =>
+    setGalleryIndex((i) => (i + 1) % demoProjects[expandedIdx].images.length);
+
+  const prevImg = () =>
+    setGalleryIndex((i) =>
+      (i - 1 + demoProjects[expandedIdx].images.length) % demoProjects[expandedIdx].images.length
+    );
 
   return (
-    <section id="projects" className="relative min-h-screen w-full flex items-start justify-center bg-gradient-to-br from-gray-400 via-gray-200 via-gray-250 to-gray-350 overflow-hidden">
+    <section id="projects" className="relative min-h-screen w-full flex items-start justify-center bg-gradient-to-br from-gray-400 via-gray-200 to-gray-350 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center justify-start pt-16">
-        {/* Logo and heading */}
         <div className="flex flex-row items-center justify-center gap-6 w-full mb-10">
           <motion.img
             src={btLogoBuyuk}
@@ -102,8 +113,7 @@ export default function Projects() {
           </motion.h2>
         </div>
 
-        {/* Project Cards Grid */}
-        <div className={`mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full transition-all duration-300 items-stretch`}>
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full transition-all duration-300 items-stretch">
           {demoProjects.map((proj, idx) => (
             <div
               key={proj.title}
