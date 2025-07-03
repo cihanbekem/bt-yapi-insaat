@@ -22,7 +22,7 @@ const ProjectCard = ({
   <AnimatePresence>
     {!expanded && (
       <motion.div
-        className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden group border border-gray-100 hover:border-gray-300 flex flex-col h-full min-h-[220px]"
+        className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden group border border-gray-100 hover:border-gray-320 flex flex-col h-full min-h-[250px] max-h-[3020px] min-w-[250px] max-w-[350px] w-full"
         onClick={onClick}
         tabIndex={0}
         role="button"
@@ -37,7 +37,7 @@ const ProjectCard = ({
         <img
           src={cover}
           alt={title}
-          className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
         />
         <div className="flex-1 flex items-end justify-center p-4">
           <h3 className="text-lg font-bold text-gray-800 text-center group-hover:text-blue-700 transition-colors duration-300">
@@ -60,7 +60,7 @@ const ProjectCard = ({
       >
         <motion.div
           layout
-          className="relative bg-white rounded-xl shadow-2xl flex flex-col items-center w-full max-w-4xl mx-auto p-6"
+          className="relative bg-white rounded-xl shadow-2xl flex flex-col items-center w-full max-w-2xl mx-auto p-6"
           initial={{ scale: 0.95 }}
           animate={{ scale: 1 }}
           exit={{ scale: 0.95 }}
@@ -83,7 +83,7 @@ const ProjectCard = ({
           <img
             src={images[galleryIndex]}
             alt="Proje Fotoğrafı"
-            className="w-full h-[500px] object-cover rounded-lg mb-6"
+            className="w-full max-h-[60vh] object-cover rounded-lg mb-6"
           />
 
           {/* Başlık */}
