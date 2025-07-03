@@ -32,7 +32,7 @@ const Contact = () => {
   const closeAlert = () => setAlert(null);
 
   return (
-    <section id="contact" className="relative min-h-screen w-full flex items-center justify-center bg-white text-black overflow-hidden">
+    <section id="contact" className="relative min-h-screen w-full flex items-center justify-center bg-white text-black overflow-hidden pt-16">
       {/* Centered Alert Modal */}
       <AnimatePresence>
         {alert && (
