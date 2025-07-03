@@ -84,37 +84,49 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-[#2d2d2d] bg-opacity-95 border-t border-[#444] shadow-lg"
-          >
-            <div className="px-4 py-6 space-y-4">
-              {navItems.map((item, index) => (
-                <motion.span
-                  key={item.name}
+          <>
+            {/* Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 bg-black z-[998] lg:hidden"
+              onClick={() => setIsOpen(false)}
+            />
+            {/* Menü */}
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="fixed top-0 left-0 right-0 z-[999] bg-[#2d2d2d] bg-opacity-95 border-t border-[#444] shadow-lg lg:hidden"
+            >
+              <div className="px-4 py-6 space-y-4">
+                {navItems.map((item, index) => (
+                  <motion.span
+                    key={item.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    onClick={() => scrollToSection(item.href)}
+                    className="block w-full text-left cursor-pointer text-gray-200 font-medium py-2 px-1 transition-colors duration-200 relative group"
+                  >
+                    {item.name}
+                    <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
+                  </motion.span>
+                ))}
+                <motion.button
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left cursor-pointer text-gray-200 font-medium py-2 px-1 transition-colors duration-200 relative group"
+                  transition={{ delay: navItems.length * 0.1 }}
+                  className="w-full bg-white text-gray-800 px-6 py-3 rounded-full font-medium shadow-lg hover:bg-gray-100 hover:shadow-xl transition-all duration-200 border border-gray-200"
+                  onClick={() => scrollToSection('#contact')}
                 >
-                  {item.name}
-                  <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
-                </motion.span>
-              ))}
-              <motion.button
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navItems.length * 0.1 }}
-                className="w-full bg-white text-gray-800 px-6 py-3 rounded-full font-medium shadow-lg hover:bg-gray-100 hover:shadow-xl transition-all duration-200 border border-gray-200"
-                onClick={() => scrollToSection('#contact')}
-              >
-                Teklif Al
-              </motion.button>
-            </div>
-          </motion.div>
+                  Teklif Al
+                </motion.button>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </nav>
