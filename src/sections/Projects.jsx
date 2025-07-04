@@ -113,7 +113,7 @@ export default function Projects() {
           </motion.h2>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full transition-all duration-300 items-stretch">
+        <div className="mt-6 w-full max-w-screen-xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {demoProjects.map((proj, idx) => (
             <div
               key={proj.title}
