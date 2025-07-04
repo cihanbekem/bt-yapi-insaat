@@ -20,32 +20,33 @@ const ProjectCard = ({
   zIndex = 10,
 }) => (
   <AnimatePresence>
-    {!expanded && (
-      <motion.div
-        className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden group border border-gray-100 hover:border-gray-320 flex flex-col h-full min-h-[250px] max-h-[3020px] min-w-[250px] max-w-[350px] w-full"
-        onClick={onClick}
-        tabIndex={0}
-        role="button"
-        aria-label={title}
-        initial="hidden"
-        animate="visible"
-        exit="hidden"
-        variants={cardVariants}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        layout
-      >
-        <img
-          src={cover}
-          alt={title}
-          className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
-        />
-        <div className="flex-1 flex items-end justify-center p-4">
-          <h3 className="text-lg font-bold text-gray-800 text-center group-hover:text-blue-700 transition-colors duration-300">
-            {title}
-          </h3>
-        </div>
-      </motion.div>
-    )}
+  {!expanded && (
+    <motion.div
+      className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden group border border-gray-100 hover:border-gray-300 flex flex-col h-full min-h-[200px] max-h-[240px] min-w-[250px] max-w-[320px] w-full"
+      onClick={onClick}
+      tabIndex={0}
+      role="button"
+      aria-label={title}
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
+      variants={cardVariants}
+      transition={{ duration: 0.5, delay: 0.1 }}
+      layout
+    >
+      <img
+        src={cover}
+        alt={title}
+        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+      />
+      <div className="flex-1 flex items-end justify-center px-3 pt-2 pb-3">
+        <h3 className="text-sm font-semibold text-gray-800 text-center group-hover:text-blue-700 transition-colors duration-300 leading-tight">
+          {title}
+        </h3>
+      </div>
+    </motion.div>
+  )}
+
 
     {expanded && (
       <motion.div
@@ -96,7 +97,7 @@ const ProjectCard = ({
                 e.stopPropagation();
                 if (onPrev) onPrev();
               }}
-              className="p-2 rounded-full bg-gray-100 hover:bg-gray-300 text-xl transition"
+              className="p-2 rounded-full bg-gray-900 hover:bg-gray-600 text-xl transition"
               aria-label="Önceki"
             >
               <FiArrowLeft />
@@ -111,7 +112,7 @@ const ProjectCard = ({
                 e.stopPropagation();
                 if (onNext) onNext();
               }}
-              className="p-2 rounded-full bg-gray-100 hover:bg-gray-300 text-xl transition"
+              className="p-2 rounded-full bg-gray-900 hover:bg-gray-600 text-xl transition"
               aria-label="Sonraki"
             >
               <FiArrowRight />
