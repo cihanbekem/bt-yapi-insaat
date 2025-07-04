@@ -79,7 +79,7 @@ const Contact = () => {
             viewport={{ once: true }}
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-8 transition-all duration-300 group relative cursor-pointer"
           >
-            <span className="group-hover:bg-gradient-to-r group-hover:from-black group-hover:via-gray-500 group-hover:to-gray-900 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+            <span className="group-hover:bg-gradient-to-r group-hover:from-black group-hover:via-gray-500 group-hover:to-gray-900 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 mb-2b mt-12 sm:mt-0">
               İletişim
             </span>
           </motion.h2>
