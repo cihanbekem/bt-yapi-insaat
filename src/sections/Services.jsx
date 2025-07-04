@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
-import btLogoKucukBeyaz from '../assets/bt_logo_kucuk_beyaz.png';
+import bt_starbucks from '../assets/bt_starbucks.jpeg';
+import bt_ramada from '../assets/bt_ramada.jpeg';
+import bt_space from '../assets/bt_space.jpeg';
 
 const services = [
   'Projelendirme',
@@ -12,95 +14,85 @@ const services = [
 const Services = () => {
   return (
     <section id="services" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#555555] via-[#666666] to-[#555555]">
-      {/* Animated Background Elements */}
+      {/* Animated Background */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        {/* Büyük dönen kare */}
         <motion.div
-          animate={{
-            rotate: [0, 360],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            ease: "linear"
-          }}
+          animate={{ rotate: [0, 360], scale: [1, 1.2, 1] }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           className="absolute top-1/4 left-1/6 w-80 h-80 border-2 border-white/10 rounded-3xl opacity-30"
         />
-        {/* Yavaşça kayan büyük daire */}
         <motion.div
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -80, 0],
-          }}
-          transition={{
-            duration: 40,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
+          animate={{ x: [0, 100, 0], y: [0, -80, 0] }}
+          transition={{ duration: 40, repeat: Infinity, ease: "easeInOut" }}
           className="absolute bottom-10 right-1/5 w-96 h-96 border-2 border-gray-200/20 rounded-full opacity-20"
         />
-        {/* Küçük hareketli üçgen (simge olarak div) */}
         <motion.div
-          animate={{
-            x: [0, -60, 0],
-            y: [0, 40, 0],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear"
-          }}
+          animate={{ x: [0, -60, 0], y: [0, 40, 0], rotate: [0, 180, 360] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
           className="absolute top-1/3 right-1/4 w-16 h-16 border-l-4 border-t-4 border-white/20 opacity-30 rotate-12"
           style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}
         />
-        {/* Grid pattern */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 0)`,
-            backgroundSize: '50px 50px'
-          }} />
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 0)`,
+              backgroundSize: '50px 50px',
+            }}
+          />
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 w-full flex flex-col items-center justify-center px-4 sm:px-8 lg:px-16 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
+      <div className="relative z-10 w-full max-w-7xl flex flex-col items-center justify-center px-4 sm:px-8 lg:px-16 text-center">
+        {/* Başlık */}
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
           viewport={{ once: true }}
-          className="space-y-10 w-full flex flex-col items-center justify-center"
+          className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 bg-clip-text text-transparent mb-10"
         >
-          {/* Başlık */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="flex flex-col items-center justify-center mb-2"
-          >
-            <img
-              src={btLogoKucukBeyaz}
-              alt="BT Logo"
-              className="w-160 h-160 object-contain mx-auto rounded-lg object-contain drop-shadow-xl transition-all duration-300 hover:scale-105 hover:drop-shadow-2xl "
-            />
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white transition-all duration-300 group relative"
-            >
-              <span className="group-hover:bg-gradient-to-r group-hover:from-white group-hover:via-gray-200 group-hover:to-white group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                Hizmetlerimiz
-              </span>
-            </motion.h2>
-          </motion.div>
+          Hizmetlerimiz
+        </motion.h2>
 
-          {/* Hizmetler Listesi */}
-          <ul className="flex flex-col gap-6 items-center justify-center mt-8">
+        {/* İçerik: Solda Görseller, Sağda Hizmetler */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center w-full">
+          {/* Sol - Görsel Düzeni */}
+          <div className="flex gap-4 w-full justify-center md:justify-end">
+            <div className="flex flex-col gap-4">
+              <motion.img
+                src={bt_starbucks}
+                alt="BT Davutlar"
+                className="object-cover w-full max-w-[240px] h-40 rounded-xl shadow-lg transition-transform duration-300 hover:scale-115"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              />
+              <motion.img
+                src={bt_ramada}
+                alt="BT Ramada"
+                className="object-cover w-full max-w-[240px] h-45 rounded-xl shadow-lg transition-transform duration-300 hover:scale-115"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+              />
+            </div>
+            <motion.img
+              src={bt_space}
+              alt="BT Space"
+              className="object-cover w-full max-w-[240px] h-[328px] self-center rounded-xl shadow-xl transition-transform duration-300 hover:scale-115"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            />
+          </div>
+
+          {/* Sağ - Hizmet Listesi */}
+          <ul className="flex flex-col gap-6 items-start justify-center mt-8">
             {services.map((service, idx) => (
               <motion.li
                 key={service}
@@ -117,19 +109,19 @@ const Services = () => {
               </motion.li>
             ))}
           </ul>
+        </div>
 
-          {/* Alt Slogan */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 1 }}
-            viewport={{ once: true }}
-            className="mt-16 group"
-          >
-            <span className="block font-bold text-3xl sm:text-5xl lg:text-6xl bg-gradient-to-r from-white via-white to-white bg-clip-text text-transparent tracking-wide">
-              BT Yapı İnşaat ile Her Yapı, Güvenle Yükselir.
-            </span>
-          </motion.div>
+        {/* Slogan */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.2, duration: 1 }}
+          viewport={{ once: true }}
+          className="mt-16"
+        >
+          <span className="block font-bold text-xl sm:text-3xl bg-gradient-to-r from-gray-300 via-gray-200 to-gray-400 bg-clip-text text-transparent tracking-wide">
+            BT Yapı İnşaat ile Her Yapı, Güvenle Yükselir.
+          </span>
         </motion.div>
       </div>
     </section>

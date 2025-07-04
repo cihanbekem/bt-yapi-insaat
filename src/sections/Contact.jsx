@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaInstagram, FaFacebook } from 'react-icons/fa';
+import { FaInstagram, FaFacebook, FaPhone } from 'react-icons/fa';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import emailjs from 'emailjs-com';
 import btLogoKucuk from '../assets/bt_logo_kucuk.png';
@@ -77,7 +77,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black mb-8 transition-all duration-300 group relative cursor-pointer"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-8 transition-all duration-300 group relative cursor-pointer"
           >
             <span className="group-hover:bg-gradient-to-r group-hover:from-black group-hover:via-gray-500 group-hover:to-gray-900 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
               İletişim
@@ -141,6 +141,14 @@ const Contact = () => {
               aria-label="Facebook"
             >
               <FaFacebook />
+            </a>
+            <a
+              href="tel:05549192627"
+              className="text-black hover:text-gray-600 transition-colors duration-200 text-3xl"
+              aria-label="Telefon"
+              title="Telefon ile ara"
+            >
+              <FaPhone />
             </a>
           </div>
           <div className="w-full flex flex-col items-center justify-center mt-12 gap-4">

@@ -17,7 +17,7 @@ import btRamada2 from '../assets/bt_ramada2.jpeg';
 import btRamada3 from '../assets/bt_ramada3.jpeg';
 
 import btSpaceLogo from '../assets/bt_space.jpeg';
-import btSpace1 from '../assets/bt_space1.jpeg';
+import btSpace1 from '../assets/bt_space1.jpeg'; 
 import btSpace2 from '../assets/bt_space2.jpeg';
 
 import btEvLogo from '../assets/bt_tadilat.jpeg';
@@ -39,12 +39,12 @@ import btDavutlarVilla3 from '../assets/bt_davutlar3.jpeg';
 
 const demoProjects = [
   {
-    title: 'Starbucks İç Dış Bakım, Onarım ve Tadilat',
+    title: 'Starbucks Bakım, Onarım ve Tadilat',
     cover: btStarbucksLogo,
     images: [btStarbucksLogo, btStarbucks1, btStarbucks2],
   },
   {
-    title: 'Ramada Hotel & Suites Havuz İnşaatı Onarım ve Tadilat',
+    title: 'Ramada Hotel & Suites Havuz İnşaatı ve Tadilat',
     cover: btRamadaLogo,
     images: [btRamadaLogo, btRamada1, btRamada2, btRamada3],
   },
@@ -54,7 +54,7 @@ const demoProjects = [
     images: [btSpaceLogo, btSpace1, btSpace2],
   },
   {
-    title: 'Ev Tadilatı',
+    title: 'Ev İç Dış Dekorasyonu',
     cover: btEvLogo,
     images: [btEvLogo, btEv1, btEv2, btEv3, btEv4],
   },
@@ -64,7 +64,7 @@ const demoProjects = [
     images: [btVillaLogo, btVilla1, btVilla2, btVilla3, btVilla4],
   },
   {
-    title: 'Kuşadası Davutlar Villa',
+    title: 'Kuşadası Davutlar Villa Projelendirme Ve Uygulama',
     cover: btDavutlarVillaLogo,
     images: [btDavutlarVillaLogo, btDavutlarVilla1, btDavutlarVilla2, btDavutlarVilla3],
   },
