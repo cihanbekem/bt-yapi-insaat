@@ -65,7 +65,7 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.7 }}
-            className="w-40 h-40 sm:w-56 sm:h-56 object-contain drop-shadow-xl mb-2b mt-32 sm:mt-0"
+            className="w-40 h-40 sm:w-56 sm:h-56 object-contain drop-shadow-xl mb-2b mt-32 sm:mt-12"
           />
 
           {/* Başlık */}
