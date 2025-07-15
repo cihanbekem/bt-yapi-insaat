@@ -65,7 +65,7 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.7 }}
-            className="w-40 h-40 sm:w-56 sm:h-56 object-contain drop-shadow-xl mb-2b mt-12 sm:mt-0"
+            className="w-40 h-40 sm:w-56 sm:h-56 object-contain drop-shadow-xl mb-2b mt-32 sm:mt-0"
           />
 
           {/* Başlık */}
@@ -73,7 +73,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight w-full"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight w-full"
           >
             <span className="block">Hayallerinize</span>
             <span className="block bg-gradient-to-r from-black-400 via-gray-400 to-black-400 bg-clip-text text-transparent">
@@ -86,7 +86,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="text-xl sm:text-2xl text-gray-200 w-full max-w-5xl mx-auto leading-relaxed"
+            className="text-xl sm:text-2xl text-gray-200 w-full max-w-4xl mx-auto leading-relaxed"
           >
             Her projeye özgü ihtiyaçları doğru analiz ederek, projelendirme, mühendislik, taahhüt, dekorasyon ve anahtar teslim tadilat süreçlerini bütüncül bir yaklaşımla ele alıyor; estetik ve işlevselliği bir arada sunan yapılar inşa ediyoruz.
           </motion.p>
