@@ -13,7 +13,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#555555] via-[#666666] to-[#555555]">
+    <section id="services" className="relative min-h-[110vh] w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#555555] via-[#666666] to-[#555555]">
       {/* Animated Background */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <motion.div
